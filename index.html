@@ -7,136 +7,175 @@
 <meta name="description" content="Ausgewählte Google Ads, Meta Ads und SEO Projekte von Palmlytics: reale Ergebnisse aus über 12 Jahren Performance-Marketing.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@500;600;700;800&family=Saira:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;500;600;700&family=Saira:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
     --navy: #071d2c;
-    --navy-light: #0f2c42;
+    --hero-blue: #2190de;
+    --blue: #3f8efc;
     --white: #fffbfc;
     --gold: #faa305;
-    --gold-light: #fcc869;
     --green: #04fb6f;
-    --green-light: #69fca8;
-    --blue: #3f8efc;
-    --blue-light: #68a6fd;
-    --text-muted: rgba(255, 251, 252, 0.68);
-    --text-faint: rgba(255, 251, 252, 0.42);
-    --border: rgba(255, 251, 252, 0.1);
+    --ink: #071d2c;
+    --ink-muted: rgba(7, 29, 44, 0.62);
+    --ink-faint: rgba(7, 29, 44, 0.4);
+    --card-shadow: 0 12px 34px -18px rgba(7, 29, 44, 0.28);
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
 
   body {
-    background: var(--navy);
-    color: var(--white);
+    background: var(--white);
+    color: var(--ink);
     font-family: 'Saira', sans-serif;
     line-height: 1.6;
-    overflow-x: hidden;
   }
 
-  h1, h2, h3, .brand, .stat-number {
+  h1, h2, h3, .stat-number {
     font-family: 'Oxanium', sans-serif;
+    font-weight: 400;
   }
 
   a { color: inherit; }
 
-  .glow {
-    position: fixed;
-    top: -20%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 900px;
-    height: 900px;
-    background: radial-gradient(circle, rgba(63, 142, 252, 0.16) 0%, rgba(4, 251, 111, 0.06) 45%, transparent 70%);
-    pointer-events: none;
-    z-index: 0;
-  }
-
+  /* Header */
   header {
-    position: sticky;
-    top: 0;
-    z-index: 10;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 20;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 22px 6vw;
-    background: rgba(7, 29, 44, 0.85);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border);
+    padding: 18px 6vw;
+    background: transparent;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
   }
-
-  .brand {
-    font-weight: 700;
-    font-size: 1.15rem;
-    letter-spacing: 0.02em;
+  header.scrolled {
+    background: var(--navy);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
   }
-  .brand span { color: var(--gold); }
-
+  header img.logo { height: 38px; display: block; }
   header .cta-link {
     text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 600;
-    padding: 9px 18px;
-    border: 1px solid var(--gold);
-    border-radius: 999px;
-    transition: background 0.2s ease, color 0.2s ease;
-    white-space: nowrap;
-  }
-  header .cta-link:hover { background: var(--gold); color: var(--navy); }
-
-  main { position: relative; z-index: 1; }
-
-  .hero {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 9vh 6vw 6vh;
-    text-align: center;
-  }
-
-  .eyebrow {
-    display: inline-block;
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
     text-transform: uppercase;
-    color: var(--green);
-    margin-bottom: 18px;
+    padding: 12px 24px;
+    background: var(--white);
+    color: var(--navy);
+  }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    padding-top: 84px;
+    background: linear-gradient(230deg, var(--hero-blue), var(--navy) 67%);
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: -10%; left: -8%;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.10) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      radial-gradient(1.5px 1.5px at 10% 20%, rgba(255,255,255,0.5), transparent),
+      radial-gradient(1.5px 1.5px at 80% 15%, rgba(255,255,255,0.4), transparent),
+      radial-gradient(1px 1px at 40% 60%, rgba(255,255,255,0.35), transparent),
+      radial-gradient(1.5px 1.5px at 65% 45%, rgba(255,255,255,0.3), transparent),
+      radial-gradient(1px 1px at 90% 70%, rgba(255,255,255,0.35), transparent),
+      radial-gradient(1.5px 1.5px at 25% 80%, rgba(255,255,255,0.3), transparent),
+      radial-gradient(1px 1px at 55% 12%, rgba(255,255,255,0.4), transparent);
+    background-repeat: repeat;
+    background-size: 600px 600px;
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 9vh 6vw 10vh;
   }
 
   .hero h1 {
-    font-size: clamp(2rem, 5vw, 3.4rem);
-    font-weight: 700;
-    line-height: 1.15;
-    margin-bottom: 20px;
+    font-size: clamp(2rem, 4.6vw, 3.4rem);
+    font-weight: 400;
+    line-height: 1.12;
+    color: var(--white);
+    margin-bottom: 22px;
   }
-  .hero h1 .accent { color: var(--gold); }
 
-  .hero p {
-    font-size: clamp(1rem, 1.6vw, 1.15rem);
-    color: var(--text-muted);
+  .hero .subline {
+    font-size: clamp(1rem, 1.6vw, 1.2rem);
+    color: var(--green);
     max-width: 620px;
-    margin: 0 auto;
+    margin-bottom: 40px;
   }
+  .hero .subline strong { font-weight: 600; }
+
+  .ghost-btn {
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid var(--white);
+    color: var(--white);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 13px 26px;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+  .ghost-btn:hover { background: var(--white); color: var(--navy); }
 
   .credentials {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
-    justify-content: center;
-    margin-top: 40px;
+    gap: 10px;
+    margin-top: 44px;
   }
   .credential {
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: var(--text-muted);
-    background: rgba(255, 251, 252, 0.05);
-    border: 1px solid var(--border);
+    font-size: 0.82rem;
+    color: rgba(255, 251, 252, 0.85);
+    background: rgba(255, 251, 252, 0.08);
+    border: 1px solid rgba(255, 251, 252, 0.18);
     padding: 8px 16px;
-    border-radius: 999px;
   }
-  .credential strong { color: var(--white); }
+  .credential strong { color: var(--white); font-weight: 600; }
+
+  /* Case studies */
+  .section-intro {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 10vh 6vw 2vh;
+    text-align: center;
+  }
+  .section-intro .eyebrow {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+  }
+  .section-intro h2 {
+    font-size: clamp(1.6rem, 3vw, 2.1rem);
+    color: var(--navy);
+    margin-bottom: 14px;
+  }
+  .section-intro p { color: var(--ink-muted); }
 
   .cases {
     max-width: 1180px;
@@ -148,43 +187,38 @@
   }
 
   .case {
-    background: linear-gradient(160deg, var(--navy-light) 0%, rgba(15, 44, 66, 0.5) 100%);
-    border: 1px solid var(--border);
-    border-radius: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
     padding: 34px 32px;
     opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.6s ease, transform 0.6s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-    overflow: hidden;
-  }
-  .case::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    background: var(--accent, var(--gold));
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease;
   }
   .case.visible { opacity: 1; transform: translateY(0); }
-  .case:hover {
-    border-color: rgba(255, 251, 252, 0.22);
-    box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.5);
+  .case:hover { box-shadow: 0 20px 44px -16px rgba(7, 29, 44, 0.32); }
+
+  .case-icon {
+    width: 34px; height: 34px;
+    margin-bottom: 18px;
+    color: var(--accent, var(--gold));
   }
+  .case-icon svg { width: 100%; height: 100%; stroke: currentColor; }
 
   .case-tag {
-    font-size: 0.78rem;
+    font-size: 0.76rem;
     font-weight: 600;
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: var(--accent, var(--gold));
-    margin-bottom: 18px;
+    margin-bottom: 10px;
   }
 
-  .case h2 {
-    font-size: 1.3rem;
-    font-weight: 600;
+  .case h3 {
+    font-size: 1.25rem;
+    font-weight: 500;
     margin-bottom: 22px;
-    color: var(--white);
+    color: var(--navy);
   }
 
   .stat-row {
@@ -194,31 +228,27 @@
     flex-wrap: wrap;
     margin-bottom: 10px;
   }
-
   .stat-number {
-    font-size: clamp(2.1rem, 4vw, 2.6rem);
-    font-weight: 800;
+    font-size: clamp(2rem, 3.6vw, 2.4rem);
+    font-weight: 700;
     color: var(--accent, var(--gold));
     line-height: 1;
   }
-
   .stat-label {
-    font-size: 0.88rem;
-    color: var(--text-muted);
+    font-size: 0.86rem;
+    color: var(--ink-muted);
     max-width: 220px;
   }
-
   .stat-context {
-    font-size: 0.92rem;
-    color: var(--text-muted);
+    font-size: 0.9rem;
+    color: var(--ink-muted);
     margin-bottom: 20px;
     padding-bottom: 20px;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid rgba(7, 29, 44, 0.08);
   }
-
   .case p.narrative {
-    font-size: 0.95rem;
-    color: var(--text-muted);
+    font-size: 0.94rem;
+    color: var(--ink-muted);
     margin-bottom: 22px;
   }
 
@@ -228,173 +258,186 @@
     gap: 8px;
   }
   .chip {
-    font-size: 0.78rem;
+    font-size: 0.76rem;
     padding: 6px 13px;
-    border-radius: 999px;
-    background: rgba(255, 251, 252, 0.06);
-    color: var(--text-muted);
-    border: 1px solid var(--border);
+    border-radius: 3px;
+    background: rgba(7, 29, 44, 0.05);
+    color: var(--ink-muted);
   }
 
   .disclosure {
     max-width: 700px;
     margin: 0 auto;
-    padding: 0 6vw 6vh;
+    padding: 0 6vw 8vh;
     text-align: center;
     font-size: 0.82rem;
-    color: var(--text-faint);
+    color: var(--ink-faint);
   }
 
+  /* Closing CTA (dark full-bleed, mirrors testimonial section pattern) */
   .closing {
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 6vh 6vw 12vh;
+    background: var(--navy);
+    padding: 10vh 6vw;
     text-align: center;
   }
+  .closing-inner { max-width: 640px; margin: 0 auto; }
   .closing h2 {
     font-size: clamp(1.5rem, 3vw, 2.1rem);
-    font-weight: 700;
+    font-weight: 400;
+    color: var(--white);
     margin-bottom: 16px;
   }
   .closing p {
-    color: var(--text-muted);
-    margin-bottom: 32px;
+    color: rgba(255, 251, 252, 0.7);
+    margin-bottom: 34px;
   }
-
-  .btn-primary {
+  .solid-btn {
     display: inline-block;
     text-decoration: none;
-    font-weight: 700;
-    font-size: 1rem;
-    padding: 15px 34px;
-    border-radius: 999px;
-    background: var(--gold);
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 15px 30px;
+    background: var(--white);
     color: var(--navy);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: background 0.2s ease;
   }
-  .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 30px -8px rgba(250, 163, 5, 0.45);
-  }
+  .solid-btn:hover { background: var(--gold); }
 
   footer {
-    border-top: 1px solid var(--border);
-    padding: 26px 6vw;
+    padding: 22px 6vw;
     text-align: center;
     font-size: 0.82rem;
-    color: var(--text-faint);
+    color: var(--ink-faint);
   }
 
   @media (max-width: 520px) {
-    header { padding: 18px 5vw; }
+    header { padding: 16px 5vw; }
+    header img.logo { height: 30px; }
     .case { padding: 28px 24px; }
   }
 </style>
 </head>
 <body>
 
-<div class="glow"></div>
-
-<header>
-  <div class="brand">Palm<span>lytics</span></div>
+<header id="site-header">
+  <img class="logo" src="logo.png" alt="Palmlytics">
   <a class="cta-link" href="https://www.palmlytics.com" target="_blank" rel="noopener">Projekt anfragen</a>
 </header>
 
-<main>
-  <section class="hero">
-    <span class="eyebrow">Ausgewählte Projekte</span>
-    <h1>Ergebnisse aus <span class="accent">Strategie und Umsetzung</span>, die zusammen gedacht werden</h1>
-    <p>Vier anonymisierte Einblicke in laufende und abgeschlossene Google Ads, Meta Ads und SEO Projekte. Reale Kennzahlen, unterschiedliche Ausgangslagen, ein gemeinsamer Ansatz: Marketing ganzheitlich statt in getrennten Kanälen denken.</p>
+<section class="hero">
+  <div class="hero-inner">
+    <h1>Ergebnisse aus Strategie und Umsetzung, die zusammen gedacht werden</h1>
+    <p class="subline"><strong>Vier ausgewählte Projekte</strong> aus laufender und abgeschlossener Google Ads, Meta Ads und SEO Betreuung.</p>
+    <a class="ghost-btn" href="#cases">Projekte ansehen</a>
     <div class="credentials">
       <div class="credential"><strong>12+ Jahre</strong> Erfahrung in Google Ads &amp; SEO</div>
       <div class="credential"><strong>Google Ads</strong> Partner-zertifiziert</div>
       <div class="credential">SEO, SEA &amp; <strong>GEO/KI-Sichtbarkeit</strong> aus einer Hand</div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="cases">
+<div class="section-intro" id="cases">
+  <span class="eyebrow">Ausgewählte Projekte</span>
+  <h2>Reale Kennzahlen, unterschiedliche Ausgangslagen</h2>
+  <p>Alle Projekte anonymisiert dargestellt. Ein gemeinsamer Ansatz: Marketing ganzheitlich statt in getrennten Kanälen denken.</p>
+</div>
 
-    <article class="case" style="--accent: var(--green)">
-      <div class="case-tag">E-Commerce · Meerwasseraquaristik</div>
-      <h2>SEO &amp; SEA vollumfänglich betreut</h2>
-      <div class="stat-row">
-        <div class="stat-number">7,4×</div>
-        <div class="stat-label">ROAS im Schnitt der letzten 12 Monate</div>
-      </div>
-      <div class="stat-context">5,5× ROAS über die gesamte Laufzeit seit Ende 2022</div>
-      <p class="narrative">Seit September 2022 in Betreuung. Google Ads wurde komplett neu aufgebaut, zuerst Search, später ergänzt um YouTube und Shopping. Parallel entwickelte sich der Shop im SEO von einer Top-5-Platzierung zur klaren Nummer 1 im deutschen Markt, gemessen am Sichtbarkeitsindex im direkten Wettbewerbervergleich.</p>
-      <div class="chips">
-        <span class="chip">SEO</span>
-        <span class="chip">Search Ads</span>
-        <span class="chip">YouTube Ads</span>
-        <span class="chip">Shopping Ads</span>
-      </div>
-    </article>
+<section class="cases">
 
-    <article class="case" style="--accent: var(--blue)">
-      <div class="case-tag">Hospitality · Hotel &amp; Golfanlage</div>
-      <h2>Konto-Restrukturierung im großen Maßstab</h2>
-      <div class="stat-row">
-        <div class="stat-number">15</div>
-        <div class="stat-label">aktive Kampagnen zeitweise parallel gesteuert</div>
-      </div>
-      <div class="stat-context">≈ 80.000 € Jahresbudget über 5 Werbekonten, 3× Google Ads und 2× Meta Ads</div>
-      <p class="narrative">Übernahme im November 2024. Das bestehende Konto war weder sauber getrackt noch conversion-basiert optimiert. Aufgebaut wurde daraus ein skalierbares Setup, das seither kontinuierlich erweitert und konsequent conversion-fokussiert gesteuert wird.</p>
-      <div class="chips">
-        <span class="chip">Konto-Restrukturierung</span>
-        <span class="chip">Conversion-Tracking</span>
-        <span class="chip">Kampagnenskalierung</span>
-      </div>
-    </article>
+  <article class="case" style="--accent: #04c95d">
+    <div class="case-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div>
+    <div class="case-tag">E-Commerce · Meerwasseraquaristik</div>
+    <h3>SEO &amp; SEA vollumfänglich betreut</h3>
+    <div class="stat-row">
+      <div class="stat-number">7,4×</div>
+      <div class="stat-label">ROAS im Schnitt der letzten 12 Monate</div>
+    </div>
+    <div class="stat-context">5,5× ROAS über die gesamte Laufzeit seit Ende 2022</div>
+    <p class="narrative">Seit September 2022 in Betreuung. Google Ads wurde komplett neu aufgebaut, zuerst Search, später ergänzt um YouTube und Shopping. Parallel entwickelte sich der Shop im SEO von einer Top-5-Platzierung zur klaren Nummer 1 im deutschen Markt, gemessen am Sichtbarkeitsindex im direkten Wettbewerbervergleich.</p>
+    <div class="chips">
+      <span class="chip">SEO</span>
+      <span class="chip">Search Ads</span>
+      <span class="chip">YouTube Ads</span>
+      <span class="chip">Shopping Ads</span>
+    </div>
+  </article>
 
-    <article class="case" style="--accent: var(--gold)">
-      <div class="case-tag">B2B · Vertrieb von Solaranlagen</div>
-      <h2>Vom Konto-Audit zum Lead-Wachstum</h2>
-      <div class="stat-row">
-        <div class="stat-number">+121%</div>
-        <div class="stat-label">mehr Leads innerhalb von 8 Monaten</div>
-      </div>
-      <div class="stat-context">Cost per Lead von 98 € auf 39 € gesenkt</div>
-      <p class="narrative">Betreuung im Jahr 2023. Ausgangspunkt war ein vollständiges Google-Ads-Konto-Audit, darauf folgten eine Restrukturierung der Kampagnen sowie die Optimierung von Landingpages und Lead-Funnel.</p>
-      <div class="chips">
-        <span class="chip">Konto-Audit</span>
-        <span class="chip">Kampagnen-Restrukturierung</span>
-        <span class="chip">Landingpage-Optimierung</span>
-      </div>
-    </article>
+  <article class="case" style="--accent: #3f8efc">
+    <div class="case-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></div>
+    <div class="case-tag">Hospitality · Hotel &amp; Golfanlage</div>
+    <h3>Konto-Restrukturierung im großen Maßstab</h3>
+    <div class="stat-row">
+      <div class="stat-number">15</div>
+      <div class="stat-label">aktive Kampagnen zeitweise parallel gesteuert</div>
+    </div>
+    <div class="stat-context">≈ 80.000 € Jahresbudget über 5 Werbekonten, 3× Google Ads und 2× Meta Ads</div>
+    <p class="narrative">Übernahme im November 2024. Das bestehende Konto war weder sauber getrackt noch conversion-basiert optimiert. Aufgebaut wurde daraus ein skalierbares Setup, das seither kontinuierlich erweitert und konsequent conversion-fokussiert gesteuert wird.</p>
+    <div class="chips">
+      <span class="chip">Konto-Restrukturierung</span>
+      <span class="chip">Conversion-Tracking</span>
+      <span class="chip">Kampagnenskalierung</span>
+    </div>
+  </article>
 
-    <article class="case" style="--accent: var(--green)">
-      <div class="case-tag">B2C · Outdoor-Erlebnispark</div>
-      <h2>Ein starkes Konto auf das nächste Level gehoben</h2>
-      <div class="stat-row">
-        <div class="stat-number">11 → 25</div>
-        <div class="stat-label">ROAS-Entwicklung im Betreuungszeitraum</div>
-      </div>
-      <div class="stat-context">Weiterentwicklung eines bereits gut laufenden Google-Ads-Kontos über rund ein Jahr Betreuung</div>
-      <p class="narrative">Bei Übernahme lief die Kampagne bereits profitabel. Durch sauberes Kampagnen-Splitting und den Aufbau eines Retargeting-Funnels ließ sich die Performance weiter steigern und eine belastbare Basis für die weitere Skalierung schaffen.</p>
-      <div class="chips">
-        <span class="chip">Kampagnen-Splitting</span>
-        <span class="chip">Retargeting-Funnel</span>
-        <span class="chip">Performance-Skalierung</span>
-      </div>
-    </article>
+  <article class="case" style="--accent: #faa305">
+    <div class="case-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div>
+    <div class="case-tag">B2B · Vertrieb von Solaranlagen</div>
+    <h3>Vom Konto-Audit zum Lead-Wachstum</h3>
+    <div class="stat-row">
+      <div class="stat-number">+121%</div>
+      <div class="stat-label">mehr Leads innerhalb von 8 Monaten</div>
+    </div>
+    <div class="stat-context">Cost per Lead von 98 € auf 39 € gesenkt</div>
+    <p class="narrative">Betreuung im Jahr 2023. Ausgangspunkt war ein vollständiges Google-Ads-Konto-Audit, darauf folgten eine Restrukturierung der Kampagnen sowie die Optimierung von Landingpages und Lead-Funnel.</p>
+    <div class="chips">
+      <span class="chip">Konto-Audit</span>
+      <span class="chip">Kampagnen-Restrukturierung</span>
+      <span class="chip">Landingpage-Optimierung</span>
+    </div>
+  </article>
 
-  </section>
+  <article class="case" style="--accent: #04c95d">
+    <div class="case-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+    <div class="case-tag">B2C · Indoor-Erlebnisanbieter</div>
+    <h3>Ein starkes Konto auf das nächste Level gehoben</h3>
+    <div class="stat-row">
+      <div class="stat-number">11 → 25</div>
+      <div class="stat-label">ROAS-Entwicklung im Betreuungszeitraum</div>
+    </div>
+    <div class="stat-context">Weiterentwicklung eines bereits gut laufenden Google-Ads-Kontos über rund ein Jahr Betreuung</div>
+    <p class="narrative">Bei Übernahme lief die Kampagne bereits profitabel. Durch sauberes Kampagnen-Splitting und den Aufbau eines Retargeting-Funnels ließ sich die Performance weiter steigern und eine belastbare Basis für die weitere Skalierung schaffen.</p>
+    <div class="chips">
+      <span class="chip">Kampagnen-Splitting</span>
+      <span class="chip">Retargeting-Funnel</span>
+      <span class="chip">Performance-Skalierung</span>
+    </div>
+  </article>
 
-  <p class="disclosure">Alle Projekte anonymisiert dargestellt: keine Kundennamen, keine Domains. Die gezeigten Kennzahlen sind real.</p>
+</section>
 
-  <section class="closing">
+<p class="disclosure">Alle Projekte anonymisiert dargestellt: keine Kundennamen, keine Domains. Die gezeigten Kennzahlen sind real.</p>
+
+<section class="closing">
+  <div class="closing-inner">
     <h2>Ein ähnliches Projekt im Kopf?</h2>
     <p>Lass uns über deine Ausgangslage sprechen und gemeinsam herausfinden, welcher Ansatz für dein Marketing sinnvoll ist.</p>
-    <a class="btn-primary" href="https://www.palmlytics.com" target="_blank" rel="noopener">Kostenloses Erstgespräch vereinbaren</a>
-  </section>
-</main>
+    <a class="solid-btn" href="https://www.palmlytics.com" target="_blank" rel="noopener">Kostenloses Erstgespräch vereinbaren</a>
+  </div>
+</section>
 
 <footer>
   Palmlytics, eine Marke der eCoup GmbH
 </footer>
 
 <script>
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
   const cases = document.querySelectorAll('.case');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
