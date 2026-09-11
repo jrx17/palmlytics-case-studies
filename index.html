@@ -104,46 +104,35 @@
   .hero-inner {
     position: relative;
     z-index: 1;
-    max-width: 760px;
+    max-width: 1180px;
     margin: 0 auto;
-    padding: 9vh 6vw 10vh;
+    padding: 8vh 6vw;
   }
 
   .hero h1 {
-    font-size: clamp(2rem, 4.6vw, 3.4rem);
+    font-size: clamp(2rem, 4.2vw, 3.2rem);
     font-weight: 400;
-    line-height: 1.12;
+    line-height: 1.15;
     color: var(--white);
-    margin-bottom: 22px;
+    max-width: 820px;
+    margin-bottom: 20px;
   }
 
   .hero .subline {
     font-size: clamp(1rem, 1.6vw, 1.2rem);
-    color: var(--green);
-    max-width: 620px;
-    margin-bottom: 40px;
+    font-weight: 300;
+    max-width: 680px;
+    background: linear-gradient(315deg, #faa305, #ffda09 50%, #04fb6f);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
-  .hero .subline strong { font-weight: 600; }
-
-  .ghost-btn {
-    display: inline-block;
-    text-decoration: none;
-    border: 1px solid var(--white);
-    color: var(--white);
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    padding: 13px 26px;
-    transition: background 0.2s ease, color 0.2s ease;
-  }
-  .ghost-btn:hover { background: var(--white); color: var(--navy); }
 
   .credentials {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    margin-top: 44px;
+    margin-top: 36px;
   }
   .credential {
     font-size: 0.82rem;
@@ -329,8 +318,7 @@
 <section class="hero">
   <div class="hero-inner">
     <h1>Ergebnisse aus Strategie und Umsetzung, die zusammen gedacht werden</h1>
-    <p class="subline"><strong>Vier ausgewählte Projekte</strong> aus laufender und abgeschlossener Google Ads, Meta Ads und SEO Betreuung.</p>
-    <a class="ghost-btn" href="#cases">Projekte ansehen</a>
+    <p class="subline">Vier ausgewählte Projekte aus laufender und abgeschlossener Google Ads, Meta Ads und SEO Betreuung.</p>
     <div class="credentials">
       <div class="credential"><strong>12+ Jahre</strong> Erfahrung in Google Ads &amp; SEO</div>
       <div class="credential"><strong>Google Ads</strong> Partner-zertifiziert</div>
